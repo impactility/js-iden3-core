@@ -48,6 +48,7 @@ export const Blockchain: { [k: string]: string } = {
   Privado: 'privado',
   Billions: 'billions',
   Linea: 'linea',
+  Watr: 'watr',
   Unknown: 'unknown',
   NoChain: '',
   ReadOnly: 'readonly'
@@ -62,6 +63,8 @@ export const NetworkId: { [k: string]: string } = {
   Zkevm: 'zkevm',
   Cardona: 'cardona',
   Test: 'test',
+  Ocean: 'ocean',
+  River: 'river',
   Unknown: 'unknown',
   NoNetwork: ''
 };
@@ -69,6 +72,7 @@ export const NetworkId: { [k: string]: string } = {
 export const DidMethod: { [k: string]: string } = {
   Iden3: 'iden3',
   PolygonId: 'polygonid',
+  WatrId: 'watrid',
   Other: ''
 };
 
@@ -90,12 +94,15 @@ export const ChainIds: { [key: string]: number } = {
   [`${Blockchain.Linea}:${NetworkId.Main}`]: 59144,
   [`${Blockchain.Linea}:${NetworkId.Sepolia}`]: 59141,
   [`${Blockchain.Billions}:${NetworkId.Main}`]: 45056,
-  [`${Blockchain.Billions}:${NetworkId.Test}`]: 6913
+  [`${Blockchain.Billions}:${NetworkId.Test}`]: 6913,
+  // [`${Blockchain.Watr}:${NetworkId.Ocean}`]: 100,
+  [`${Blockchain.Watr}:${NetworkId.River}`]: 92870,
 };
 
 export const DidMethodByte: { [key: string]: number } = {
   [DidMethod.Iden3]: 0b00000001,
   [DidMethod.PolygonId]: 0b00000010,
+  [DidMethod.WatrId]: 0b00000011,
   [DidMethod.Other]: 0b11111111
 };
 
@@ -114,7 +121,8 @@ const blockchainNetworkMap = {
   [`${Blockchain.Linea}:${NetworkId.Main}`]: 0b0100_0000 | 0b0000_1001,
   [`${Blockchain.Linea}:${NetworkId.Sepolia}`]: 0b0100_0000 | 0b0000_1000,
   [`${Blockchain.Billions}:${NetworkId.Main}`]: 0b1011_0000 | 0b0000_0001,
-  [`${Blockchain.Billions}:${NetworkId.Test}`]: 0b1011_0000 | 0b0000_0010
+  // [`${Blockchain.Watr}:${NetworkId.Ocean}`]: 0b0101_0000 | 0b0000_0001,
+  [`${Blockchain.Watr}:${NetworkId.River}`]: 0b0101_0000 | 0b0000_0010
 };
 
 // DIDMethodNetwork is map for did methods and their blockchain networks
@@ -125,6 +133,9 @@ export const DidMethodNetwork: {
     ...blockchainNetworkMap
   },
   [DidMethod.PolygonId]: {
+    ...blockchainNetworkMap
+  },
+  [DidMethod.WatrId]: {
     ...blockchainNetworkMap
   },
   [DidMethod.Other]: {
