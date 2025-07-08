@@ -63,7 +63,7 @@ export const NetworkId: { [k: string]: string } = {
   Zkevm: 'zkevm',
   Cardona: 'cardona',
   Test: 'test',
-  Ocean: 'ocean',
+  // Ocean: 'ocean',
   River: 'river',
   Unknown: 'unknown',
   NoNetwork: ''
