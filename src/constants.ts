@@ -63,7 +63,7 @@ export const NetworkId: { [k: string]: string } = {
   Zkevm: 'zkevm',
   Cardona: 'cardona',
   Test: 'test',
-  // Ocean: 'ocean',
+  Ocean: 'ocean',
   River: 'river',
   Unknown: 'unknown',
   NoNetwork: ''
@@ -95,7 +95,7 @@ export const ChainIds: { [key: string]: number } = {
   [`${Blockchain.Linea}:${NetworkId.Sepolia}`]: 59141,
   [`${Blockchain.Billions}:${NetworkId.Main}`]: 45056,
   [`${Blockchain.Billions}:${NetworkId.Test}`]: 6913,
-  // [`${Blockchain.Watr}:${NetworkId.Ocean}`]: 100,
+  [`${Blockchain.Watr}:${NetworkId.Ocean}`]: 192,
   [`${Blockchain.Watr}:${NetworkId.River}`]: 92870,
 };
 
@@ -121,7 +121,7 @@ const blockchainNetworkMap = {
   [`${Blockchain.Linea}:${NetworkId.Main}`]: 0b0100_0000 | 0b0000_1001,
   [`${Blockchain.Linea}:${NetworkId.Sepolia}`]: 0b0100_0000 | 0b0000_1000,
   [`${Blockchain.Billions}:${NetworkId.Main}`]: 0b1011_0000 | 0b0000_0001,
-  // [`${Blockchain.Watr}:${NetworkId.Ocean}`]: 0b0101_0000 | 0b0000_0001,
+  [`${Blockchain.Watr}:${NetworkId.Ocean}`]: 0b0101_0000 | 0b0000_0001,
   [`${Blockchain.Watr}:${NetworkId.River}`]: 0b0101_0000 | 0b0000_0010
 };
 
